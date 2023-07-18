@@ -14,36 +14,90 @@ function getEnigmaChoice() {
   return enigmaChoice;
 }
 
-function simulateRPSRound(enigmaChoice, playerchoice) {
+function getPlayerChoice() {
+  return new Promise((resolve) => {
+    const rockButton = document.getElementById("rock");
+    const paperButton = document.getElementById("paper");
+    const scissorsButton = document.getElementById("scissors");
+
+    rockButton.addEventListener("click", () => {
+      resolve("Rock");
+    });
+    paperButton.addEventListener("click", () => {
+      resolve("Paper");
+    });
+    scissorsButton.addEventListener("click", () => {
+      resolve("Scissors");
+    });
+  });
+}
+
+function simulateRPSRound(enigmaChoice, playerChoice) {
   switch (enigmaChoice) {
     case "Rock":
-      if (playerchoice === "Paper") {
+      if (playerChoice === "Paper") {
         return "Player";
-      } else if (playerchoice === "Rock") {
+      } else if (playerChoice === "Rock") {
         return "Tie";
-      } else if (playerchoice === "Scissors") {
+      } else if (playerChoice === "Scissors") {
         return "Enigma";
       }
       break;
 
     case "Paper":
-      if (playerchoice === "Paper") {
+      if (playerChoice === "Paper") {
         return "Tie";
-      } else if (playerchoice === "Rock") {
+      } else if (playerChoice === "Rock") {
         return "Enigma";
-      } else if (playerchoice === "Scissors") {
+      } else if (playerChoice === "Scissors") {
         return "Player";
       }
       break;
 
     case "Scissors":
-      if (playerchoice === "Paper") {
+      if (playerChoice === "Paper") {
         return "Enigma";
-      } else if (playerchoice === "Rock") {
+      } else if (playerChoice === "Rock") {
         return "Player";
-      } else if (playerchoice === "Scissors") {
+      } else if (playerChoice === "Scissors") {
         return "Tie";
       }
       break;
   }
 }
+
+async function battle() {
+  let playerWinCount = 0;
+  let enigmaWinCount = 0;
+
+  while (true) {
+    let enigmaChoice = getEnigmaChoice();
+    let playerChoice = await getPlayerChoice(); // Wait for player's choice
+
+    let winner = simulateRPSRound(enigmaChoice, playerChoice);
+    if (winner === "Enigma") {
+      enigmaWinCount++;
+      console.log("Enigma wins");
+    } else if (winner === "Player") {
+      playerWinCount++;
+      console.log("Player round win");
+    } else {
+      console.log("Tie");
+      continue;
+    }
+
+    if (enigmaWinCount === 5) {
+      console.log("Enigma Wins!");
+      break;
+    }
+
+    if (playerWinCount === 5) {
+      console.log("Player Wins");
+      break;
+    } else {
+      continue;
+    }
+  }
+}
+
+battle();
