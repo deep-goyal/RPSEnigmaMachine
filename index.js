@@ -1,6 +1,6 @@
 function getEnigmaChoice() {
   let enigmaChoice;
-  let randomNum = Math.floor(Math.random() * 1000);
+  let randomNum = crypto.getRandomValues(new Uint16Array(1));
   let choiceOf3 = randomNum % 3;
 
   if (choiceOf3 === 0) {

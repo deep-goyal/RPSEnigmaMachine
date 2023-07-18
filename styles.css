@@ -1,4 +1,16 @@
 * {
   background-color: black;
   color: white;
+  font-family: "Amatic SC", cursive;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 150px;
 }
