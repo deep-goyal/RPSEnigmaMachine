@@ -14,29 +14,43 @@
   </head>
   <body>
     <h1>RPS ENIGMA MACHINE</h1>
-    <p>
-      Cadet, you have been handpicked for a crucial mission: to crack the
-      elusive RPS Enigma Machine. As the world hangs in the balance, your skills
-      in Rock Paper Scissors will be put to the ultimate test. The machine is a
-      formidable opponent, calculating its moves with lightning precision, and
-      it holds the key to victory.
-    </p>
-
-    <p>
-      Your objective is clear: engage in a series of intense Rock Paper Scissors
-      battles with the Enigma Machine, pushing your strategic instincts to their
-      limits. This is not a game of chance; it is a battle of wits and
-      anticipation. The first one to claim victory in five rounds shall be the
-      ultimate champion.
-    </p>
-
     <div>
-      <button id="rock"><img src="./Assets/rock.svg" /></button>
+      <p>
+        Cadet, you have been handpicked for a crucial mission: to crack the
+        elusive RPS Enigma Machine. As the world hangs in the balance, your
+        skills in Rock Paper Scissors will be put to the ultimate test. The
+        machine is a formidable opponent, calculating its moves with lightning
+        precision, and it holds the key to victory.
+      </p>
 
-      <button id="paper"><img src="./Assets/paper.svg" /></button>
+      <p>
+        Your objective is clear: engage in a series of intense Rock Paper
+        Scissors battles with the Enigma Machine, pushing your strategic
+        instincts to their limits. This is not a game of chance; it is a battle
+        of wits and anticipation. The first one to claim victory in five rounds
+        shall be the ultimate champion.
+      </p>
 
-      <button id="scissors"><img src="./Assets/scissors.svg" /></button>
+      <p>Choose your weapon!</p>
+
+      <p id="status"></p>
     </div>
+
+    <div class="buttons">
+      <button id="rock">
+        <img src="./Assets/rock.svg" alt="Rock Button" />
+      </button>
+
+      <button id="paper">
+        <img src="./Assets/paper.svg" alt="Paper Button" />
+      </button>
+
+      <button id="scissors">
+        <img src="./Assets/scissors.svg" alt="Scissors Button" />
+      </button>
+    </div>
+
+    <button id="battleButton">Start</button>
 
     <script src="./index.js"></script>
   </body>

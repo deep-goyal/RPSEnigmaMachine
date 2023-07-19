@@ -73,26 +73,25 @@ async function battle() {
   while (true) {
     let enigmaChoice = getEnigmaChoice();
     let playerChoice = await getPlayerChoice(); // Wait for player's choice
+    const statusElement = document.getElementById("status");
+
+    console.log(enigmaChoice + playerChoice);
 
     let winner = simulateRPSRound(enigmaChoice, playerChoice);
     if (winner === "Enigma") {
       enigmaWinCount++;
-      console.log("Enigma wins");
+      statusElement.innerText = "Enigma wins this round!" + enigmaWinCount;
     } else if (winner === "Player") {
       playerWinCount++;
-      console.log("Player round win");
     } else {
-      console.log("Tie");
       continue;
     }
 
     if (enigmaWinCount === 5) {
-      console.log("Enigma Wins!");
       break;
     }
 
     if (playerWinCount === 5) {
-      console.log("Player Wins");
       break;
     } else {
       continue;
@@ -100,4 +99,9 @@ async function battle() {
   }
 }
 
-battle();
+const battleButton = document.getElementById("battleButton");
+
+battleButton.addEventListener("click", () => {
+  alert("Game started");
+  battle();
+});
