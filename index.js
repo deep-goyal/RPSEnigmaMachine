@@ -1,3 +1,4 @@
+//funtion generates a random number and uses modulo to return rock, paper or scissors
 function getEnigmaChoice() {
   let enigmaChoice;
   let randomNum = crypto.getRandomValues(new Uint32Array(1));
@@ -14,6 +15,7 @@ function getEnigmaChoice() {
   return enigmaChoice;
 }
 
+//function creates a promise object based on the user's choice and returns it to the async battle function
 function getPlayerChoice() {
   return new Promise((resolve) => {
     const rockButton = document.getElementById("rock");
@@ -32,6 +34,7 @@ function getPlayerChoice() {
   });
 }
 
+//simulates an RPS round and returns the winner
 function simulateRPSRound(enigmaChoice, playerChoice) {
   switch (enigmaChoice) {
     case "Rock":
@@ -66,6 +69,7 @@ function simulateRPSRound(enigmaChoice, playerChoice) {
   }
 }
 
+//asynchrounous function awaits user response and simulates RPS rounds with the enigma machine
 async function battle() {
   let playerWinCount = 0;
   let enigmaWinCount = 0;
@@ -84,6 +88,8 @@ async function battle() {
   while (true) {
     let enigmaChoice = getEnigmaChoice();
     let playerChoice = await getPlayerChoice(); // Wait for player's choice
+
+    //status element to dynamically update the DOM based on the winner of each round
     const statusElement = document.getElementById("status");
 
     let winner = simulateRPSRound(enigmaChoice, playerChoice);
@@ -121,6 +127,7 @@ async function battle() {
   }
 }
 
+//kickstart the battle function after user clicks the start button
 const battleButton = document.getElementById("battleButton");
 const statusElement = document.getElementById("status");
 const enigmaScoreButton = battleButton.addEventListener("click", () => {
