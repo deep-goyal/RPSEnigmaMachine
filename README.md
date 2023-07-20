@@ -2,7 +2,7 @@
 
 ## Overview
 
-RPS Enigma Machine is a project where I explore the beauty of randomness through a rock paper scissors game. It is a web application built entirely on HTML, CSS and JavaScript.
+The RPS Enigma Machine project is a web application centered around a rock-paper-scissors game, aiming to delve into the fascinating realm of randomness. Developed using standard web technologies like HTML, CSS, and JavaScript, the project offers an enjoyable experience while exploring the intriguing aspects of chance and decision-making.
 
 ## Deployment
 
@@ -10,7 +10,7 @@ The project has been deployed and can be accessed at [rpsenigmamachine.vercel.ap
 
 ## About the Project
 
-RPS Enigma Machine is a simple game on the surface, but its underlying beauty lies in the exploration of randomness. By leveraging the `Crypto` interface, the application ensures that the computer opponent's choices are truly unpredictable and more random than the `Math.random()` function.
+RPS Enigma Machine is a simple game on the surface, but its underlying beauty lies in the exploration of randomness. By leveraging the `Crypto` interface, the application ensures that the computer opponent's choices are truly unpredictable and more random than the `Math.random` function.
 
 ## How to Play
 
@@ -33,7 +33,7 @@ Randomness is a captivating concept with wide-ranging applications in gaming. Th
 
 ## Credits
 
-This project was created by Deep Goyal.
+This project was created by Deep Goyal. [OpenAI's ChatGPT](https://openai.com/blog/chatgpt) was used to clean up the code and test responsiveness as well.
 
 ## Feedback and Contributions
 
