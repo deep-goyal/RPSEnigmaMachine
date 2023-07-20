@@ -10,7 +10,7 @@ The project has been deployed and can be accessed at [rpsenigmamachine.vercel.ap
 
 ## About the Project
 
-RPS Enigma Machine is a simple game on the surface, but its underlying beauty lies in the exploration of randomness. By leveraging the `Crypto` interface, the application ensures that the computer opponent's choices are truly unpredictable and more random than the `math.random` function.
+RPS Enigma Machine is a simple game on the surface, but its underlying beauty lies in the exploration of randomness. By leveraging the `crypto` interface, the application ensures that the computer opponent's choices are truly unpredictable and more random than the `math.random` function.
 
 ## How to Play
 
