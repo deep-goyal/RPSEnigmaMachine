@@ -22,7 +22,7 @@ RPS Enigma Machine is a simple game on the surface, but its underlying beauty li
 
 ## The Beauty of Randomness
 
-Randomness is a captivating concept with wide-ranging applications in gaming. The `Math.random` function uses a deterministic algorithm to generate a random number between 0 and 1, but the `crypto.getRandomValues` function uses the underlying cryptographic engine of the browser or operating system to generate truly random values The cryptographic engine gathers entropy from various sources, including hardware events, system processes, and other unpredictable phenomena. As a result, the generated random numbers are not predictable, and the process is more robust than the Math library's `Math.random`.
+Randomness is a captivating concept with wide-ranging applications in gaming. The `math.random` function uses a deterministic algorithm to generate a random number between 0 and 1, but the `crypto.getRandomValues` function uses the underlying cryptographic engine of the browser or operating system to generate truly random values The cryptographic engine gathers entropy from various sources, including hardware events, system processes, and other unpredictable phenomena. As a result, the generated random numbers are not predictable, and the process is more robust than the math library's `math.random`.
 
 ## Technologies
 
