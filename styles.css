@@ -1,4 +1,4 @@
-/*General styles*/
+/* General styles */
 * {
   background-color: black;
   color: white;
@@ -15,6 +15,7 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   gap: 1px;
+  padding: 20px;
 }
 
 img {
@@ -33,15 +34,35 @@ span {
 h1 {
   font-size: 80px;
   font-weight: 1000;
+  text-align: center;
   margin: 10px;
 }
 
-button {
-  transition: transform 0.5s ease-in-out;
-  cursor: pointer; /* Added cursor pointer */
+/* Media queries to target mobile devices and define custom styles */
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  div {
+    margin: 20px;
+  }
+
+  span {
+    font-size: 24px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  img {
+    width: 100px;
+  }
 }
 
-/*Defining the scaling effect when user hovers over the buttons*/
+/*Defining the scaling effect when the user hovers over the buttons*/
 button:hover {
   transform: scale(1.1);
 }
