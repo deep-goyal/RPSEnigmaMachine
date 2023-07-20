@@ -39,7 +39,7 @@ h1 {
 }
 
 /* Media queries to target mobile devices and define custom styles */
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 700px) {
   h1 {
     font-size: 60px;
   }
