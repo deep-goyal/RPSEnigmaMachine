@@ -70,6 +70,17 @@ async function battle() {
   let playerWinCount = 0;
   let enigmaWinCount = 0;
 
+  const enigmaScoreEl = document.getElementById("enigmaScore");
+  const playerScoreEl = document.getElementById("playerScore");
+
+  // Reset the scores to 0
+  enigmaWinCount = 0;
+  playerWinCount = 0;
+
+  // Update the score display elements to show the initial scores
+  enigmaScoreEl.innerText = "ENIGMA: " + enigmaWinCount;
+  playerScoreEl.innerText = "PLAYER: " + playerWinCount;
+
   while (true) {
     let enigmaChoice = getEnigmaChoice();
     let playerChoice = await getPlayerChoice(); // Wait for player's choice
@@ -78,10 +89,12 @@ async function battle() {
     let winner = simulateRPSRound(enigmaChoice, playerChoice);
     if (winner === "Enigma") {
       enigmaWinCount++;
+      enigmaScoreEl.innerText = "ENIGMA: " + enigmaWinCount;
       console.log("Enigma Count " + enigmaWinCount);
       statusElement.innerText = "Enigma wins this round!";
     } else if (winner === "Player") {
       playerWinCount++;
+      playerScoreEl.innerText = "PLAYER: " + playerWinCount;
       console.log("Player count " + playerWinCount);
       statusElement.innerText = "Good Job, cadet! You won this round!";
     } else {
@@ -92,7 +105,7 @@ async function battle() {
     if (enigmaWinCount === 5) {
       statusElement.innerText = "YOU LOST!";
       battleButton.style.display = "block";
-      battleButton.innerText = "Play Again!?";
+      battleButton.innerText = "Play Again?";
       break;
     }
 
@@ -110,8 +123,7 @@ async function battle() {
 
 const battleButton = document.getElementById("battleButton");
 const statusElement = document.getElementById("status");
-
-battleButton.addEventListener("click", () => {
+const enigmaScoreButton = battleButton.addEventListener("click", () => {
   battleButton.style.display = "none";
   statusElement.innerText = "Game Started!";
   battle();
